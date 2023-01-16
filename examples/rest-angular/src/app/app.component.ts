@@ -24,4 +24,8 @@ export class AppComponent {
   onSubmit() {
     this.submit.next();
   }
+
+  onFileDownloadClick() {
+    this.userService.downloadFile().subscribe();
+  }
 }

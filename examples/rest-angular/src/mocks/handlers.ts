@@ -12,5 +12,12 @@ export const handlers = [
         lastName: 'Maverick'
       })
     );
+  }),
+  rest.get('/file', async (req, res, ctx) => {
+    const blob = new Blob(['123 a file i see'], {type: 'text'});
+    return res(
+      ctx.body(blob),
+      ctx.set('Content-Type', 'application/octet-stream')
+    )
   })
 ];
